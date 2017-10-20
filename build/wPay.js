@@ -5,7 +5,6 @@ var pay = {
     config:{
         ajaxMethod:'GET',
         loopTime:2000,
-        isLoad:false,
         haveWechat:true,
         wechatOrderPath:'',
         wechatResultPath:'',
@@ -13,6 +12,7 @@ var pay = {
         haveAlipay:false,
         orderError:'下单出现错误，请重试'
     },
+    isLoad:false,
     ajaxIng:false,
     money:'',
     orderData:{},
@@ -30,10 +30,10 @@ var pay = {
             $("head").append('<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">');
         }
         $("head").append('<link type="text/css" rel="stylesheet" href="'+pay.getCssUrl()+'"/>');
-        pay.config.isLoad= true;
+        pay.isLoad= true;
     },
     show:function (money, data) {
-        if(!pay.config.isLoad){
+        if(!pay.isLoad){
             pay.loadCss();
         }
         pay.money = money;
