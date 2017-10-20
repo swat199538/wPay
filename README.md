@@ -21,14 +21,14 @@
 
 /*配置参数*/
 
-pay.config.wechatOrderPath = "你的创建订单后台地址";
-pay.config.wechatResultPath = "你的查询订单完成地址";
+pay.config.wechatOrderPath = "你的创建微信订单后台地址";
+pay.config.wechatResultPath = "你的查询微信订单完成地址";
 pay.orderReturn = function (e) {
     //ajax请求下单接口执行的操作，e是服务端返回的数据，用户自行判断
     //下单是否成功，成功返回数据中的uri信息，失败返回false
 }
 pay.payResult = function (e){
-    //ajax请求支付查询接口后执行，用户执行判断数据
+    //ajax请求支付查询接口后执行，用自行数据
     //已支付返回 true,未支付返回false
 }
 pay.endEvent = function () {
@@ -45,19 +45,19 @@ pay.show(money, {_token:'sdfa*&^2,x*71'});
 //设置ajax访问采用的方式(默认GET)
 pay.config.ajaxMethod = 'POST';
 
-//设置创建问订单，询问订单支付状态间隔时间(默认2000)
+//设置创建完成订单后，询问订单支付状态间隔时间(默认2000)
 pay.config.loopTime = 3000;
 
-//设置是否显示微信支付
+//设置是否显示微信二维码支付
 pay.config.haveWechat = false;
 
-//设置是否显示支付宝支付(暂时还代完善，请为使用)
+//设置是否显示支付宝支付(暂时还未完成，请不要使用)
 pay.config.haveAlipay = true;
 
-//是否加载字体,如果微信和支付宝选择中的时候没有打勾请设置此值
+//是否加载字体,如果微信和支付宝选中的时候没有打勾请设置此值
 pay.config.isLoadFont = true;
 
-//创建订单出现错的时候的提示
+//创建订单出现错时的提示
 pay.config.orderError = "创建订单失败了呢。";
 
 
